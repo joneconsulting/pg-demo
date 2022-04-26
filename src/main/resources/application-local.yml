@@ -1,0 +1,11 @@
+server:
+  port: 21000
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+lib_dir:
+  lgdacom: /Users/dowonlee_1/Desktop/Work/11.job/working/pg-demo/src/main/webapp/WEB-INF/jsp/lgdacom/
