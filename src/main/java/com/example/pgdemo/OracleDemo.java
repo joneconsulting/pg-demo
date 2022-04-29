@@ -87,10 +87,10 @@ public class OracleDemo {
                         "TITLE, MSG_CONTENT, CALLING_NUM, TGT_NM, PHONE_NUM, " +
                         "RESERV_DTTM, REG_DTTM) " +
                         "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVA,?,'0',?,?,?,?,?,NULL," +
-                        "TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'));";
+                        "TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "MONO_CUSTOMER"); // UMS시스템에서 할당 받은 사용자 계정을 입력
-            pstmt.setString(2, "[외부전송]SMS"); // [외부전송]SMS
+            pstmt.setString(2, new String("[외부전송]SMS")); // [외부전송]SMS
             pstmt.setString(3, "외부시스템 SMS전송테스트 입니다."); // 외부시스템 SMS전송테스트 입니다.
             pstmt.setString(4, "0221558853"); // 021112222
             pstmt.setString(5, "사회공헌플랫폼"); // 홍길동
