@@ -43,8 +43,11 @@ public class PGController {
 
     @GetMapping("/welcome.do")
     public String connectOracle() {
-        String result = oracleDemo.connectOracle();
-        System.out.println(result);
+        boolean result1 = oracleDemo.addData();
+        System.out.println(result1 ? "추가 성공" : "추가 실패");
+        String result2 = oracleDemo.readData();
+        System.out.println(result2);
+
         return "welcome";
     }
 }
