@@ -22,14 +22,14 @@ public class OracleDemo {
         try {
             conn = DriverManager.getConnection("jdbc:oracle:thin:@211.241.36.16:1521:ora11",
                     "mono_customer", "mono_customer");
-            System.out.print(conn);
-
-            ResultSet rs = conn.getMetaData().getTables(null, "MONO_SOLUTIONS",
-                    null, new String[]{"TABLE"});
-            while (rs.next()) {
-                String table = rs.getString("TABLE_NAME");
-                System.out.println("Table Name : " + table);
-            }
+//            System.out.print(conn);
+//
+//            ResultSet rs = conn.getMetaData().getTables(null, "MONO_SOLUTIONS",
+//                    null, new String[]{"TABLE"});
+//            while (rs.next()) {
+//                String table = rs.getString("TABLE_NAME");
+//                System.out.println("Table Name : " + table);
+//            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -92,9 +92,9 @@ public class OracleDemo {
                         "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVAL,'MONO_CUSTOMER','0',?,?,?,?,?,NULL," +
                         "TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))";
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, new String("[External send]SMS")); // [외부전송]SMS
-            pstmt.setString(2, "This is a test message for external system"); // 외부시스템 SMS전송테스트 입니다.
-            pstmt.setString(3, "01042862327"); // 021112222
+            pstmt.setString(1, new String("[외부전송]SMS")); // [외부전송]SMS
+            pstmt.setString(2, "외부시스템 SMS전송테스트 입니다."); // 외부시스템 SMS전송테스트 입니다.
+            pstmt.setString(3, "0221556100"); // 021112222
             pstmt.setString(4, "이도원"); // 홍길동
             pstmt.setString(5, "01034912327"); // 01011112222
 
