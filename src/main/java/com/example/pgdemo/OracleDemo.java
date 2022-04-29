@@ -63,11 +63,13 @@ public class OracleDemo {
             System.out.println("<<<<<<<<<<<<<<<<");
             while (rs2.next()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append("ID=" + rs2.getString("ID"));
-                sb.append("USER_ID=" + rs2.getString("USER_ID"));
-                sb.append("TITLE=" + rs2.getString("TITLE"));
-                sb.append("CALLING_NUM=" + rs2.getString("CALLING_NUM"));
-                sb.append("PHONE_NUM=" + rs2.getString("PHONE_NUM"));
+                sb.append("\nID=" + rs2.getString("ID"));
+                sb.append("\nUSER_ID=" + rs2.getString("USER_ID"));
+                sb.append("\nTITLE=" + rs2.getString("TITLE"));
+                sb.append("\nCALLING_NUM=" + rs2.getString("CALLING_NUM"));
+                sb.append("\nPHONE_NUM=" + rs2.getString("PHONE_NUM"));
+                sb.append("\nREG_DTTM=" + rs2.getString("REG_DTTM"));
+
                 System.out.println(sb.toString());
             }
             System.out.println(">>>>>>>>>>>>>>>>");
@@ -92,7 +94,7 @@ public class OracleDemo {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, new String("[External send]SMS")); // [외부전송]SMS
             pstmt.setString(2, "This is a test message for external system"); // 외부시스템 SMS전송테스트 입니다.
-            pstmt.setString(3, "0221558853"); // 021112222
+            pstmt.setString(3, "01042862327"); // 021112222
             pstmt.setString(4, "이도원"); // 홍길동
             pstmt.setString(5, "01034912327"); // 01011112222
 
