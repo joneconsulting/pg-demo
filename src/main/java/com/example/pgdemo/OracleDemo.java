@@ -52,7 +52,7 @@ public class OracleDemo {
         String msg = null;
         Connection conn = getConnection();
         try {
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM MONO_SOLUTIONS.CUSTOMER_SMS_SEND");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM MONO_SOLUTIONS.CUSTOMER_SMS_SEND ORDER BY ID DESC");
             ResultSet rs2 = pstmt.executeQuery();
             ResultSetMetaData rsmd = rs2.getMetaData();
             int cnt = rsmd.getColumnCount();
@@ -92,7 +92,7 @@ public class OracleDemo {
             pstmt.setString(1, new String("[External send]SMS")); // [외부전송]SMS
             pstmt.setString(2, "This is a test message for external system"); // 외부시스템 SMS전송테스트 입니다.
             pstmt.setString(3, "0221558853"); // 021112222
-            pstmt.setString(4, "SEOCHO SCP"); // 홍길동
+            pstmt.setString(4, "이도원"); // 홍길동
             pstmt.setString(5, "01034912327"); // 01011112222
 
             int result = pstmt.executeUpdate();
