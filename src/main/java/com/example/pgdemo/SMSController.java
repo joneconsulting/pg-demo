@@ -2,10 +2,7 @@ package com.example.pgdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,9 +23,9 @@ public class SMSController {
         return result;
     }
 
-    @GetMapping("/add.do")
-    public String add() {
-        boolean result1 = oracleDemo.addData();
+    @GetMapping("/add.do/{phoneNum}")
+    public String add(@PathVariable(value = "phoneNum") String phoneNum) {
+        boolean result1 = oracleDemo.addData(phoneNum);
 
         return result1 ? "추가 성공" : "추가 실패";
     }

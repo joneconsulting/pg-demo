@@ -87,7 +87,7 @@ public class OracleDemo {
         return list;
     }
 
-    public boolean addData() {
+    public boolean addData(String phoneNum) {
         String msg = null;
         Connection conn = getConnection();
         try {
@@ -101,7 +101,7 @@ public class OracleDemo {
             pstmt.setString(2, "외부시스템 SMS전송테스트 입니다."); // 외부시스템 SMS전송테스트 입니다.
             pstmt.setString(3, "0221556100"); // 021112222
             pstmt.setString(4, "이도원"); // 홍길동
-            pstmt.setString(5, "01034912327"); // 01011112222
+            pstmt.setString(5, phoneNum); // 01011112222
 
             int result = pstmt.executeUpdate();
 
