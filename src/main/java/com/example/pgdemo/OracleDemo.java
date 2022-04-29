@@ -26,9 +26,9 @@ public class OracleDemo {
             ResultSet rs = conn.getMetaData().getSchemas();
             while(rs.next()) {
                 try {
-                    String catalog = rs.getString("TABLE_CATALOG");
+//                    String catalog = rs.getString("TABLE_CATALOG");
                     String schema = rs.getString("TABLE_SCHEM");
-                    System.out.println("Catalog : " + catalog + ", Schema : " + schema);
+                    System.out.println("Schema : " + schema);
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
