@@ -30,19 +30,19 @@ public class OracleDemo {
                 System.out.println("Table Name : " + table);
             }
 
-//            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM CUSTOMER_SMS_SEND");
-//            ResultSet rs = pstmt.executeQuery();
-//            System.out.println("<<<<<<<<<<<<<<<<");
-//            while (rs.next()) {
-//                StringBuilder sb = new StringBuilder();
-//                sb.append("ID=" + rs.getString("ID"));
-//                sb.append("USER_ID=" + rs.getString("USER_ID"));
-//                sb.append("TITLE=" + rs.getString("TITLE"));
-//                sb.append("CALLING_NUM=" + rs.getString("CALLING_NUM"));
-//                sb.append("PHONE_NUM=" + rs.getString("PHONE_NUM"));
-//                System.out.println(sb.toString());
-//            }
-//            System.out.println(">>>>>>>>>>>>>>>>");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM MONO_SOLUTIONS.CUSTOMER_SMS_SEND");
+            ResultSet rs2 = pstmt.executeQuery();
+            System.out.println("<<<<<<<<<<<<<<<<");
+            while (rs2.next()) {
+                StringBuilder sb = new StringBuilder();
+                sb.append("ID=" + rs.getString("ID"));
+                sb.append("USER_ID=" + rs.getString("USER_ID"));
+                sb.append("TITLE=" + rs.getString("TITLE"));
+                sb.append("CALLING_NUM=" + rs.getString("CALLING_NUM"));
+                sb.append("PHONE_NUM=" + rs.getString("PHONE_NUM"));
+                System.out.println(sb.toString());
+            }
+            System.out.println(">>>>>>>>>>>>>>>>");
 
             msg = "데이터베이스 연결 성공\n";
         } catch (SQLException e) {
