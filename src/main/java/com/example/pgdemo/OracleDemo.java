@@ -34,7 +34,7 @@ public class OracleDemo {
             ResultSet rs2 = pstmt.executeQuery();
             ResultSetMetaData rsmd = rs2.getMetaData();
             int cnt = rsmd.getColumnCount();
-            for (int i = 0; i < cnt; i++) {
+            for (int i = 1; i <= cnt; i++) {
                 System.out.println(rsmd.getColumnName(i));
             }
             System.out.println("<<<<<<<<<<<<<<<<");
