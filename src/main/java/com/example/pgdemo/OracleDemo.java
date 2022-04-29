@@ -55,11 +55,11 @@ public class OracleDemo {
             PreparedStatement pstmt = conn.prepareStatement(
                     "SELECT * FROM MONO_SOLUTIONS.CUSTOMER_SMS_SEND WHERE PHONE_NUM='01034912327'");
             ResultSet rs2 = pstmt.executeQuery();
-            ResultSetMetaData rsmd = rs2.getMetaData();
-            int cnt = rsmd.getColumnCount();
-            for (int i = 1; i <= cnt; i++) {
-                System.out.println(rsmd.getColumnLabel(i));
-            }
+//            ResultSetMetaData rsmd = rs2.getMetaData();
+//            int cnt = rsmd.getColumnCount();
+//            for (int i = 1; i <= cnt; i++) {
+//                System.out.println(rsmd.getColumnLabel(i));
+//            }
             System.out.println("<<<<<<<<<<<<<<<<");
             while (rs2.next()) {
                 StringBuilder sb = new StringBuilder();
