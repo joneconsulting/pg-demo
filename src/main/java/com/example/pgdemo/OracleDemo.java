@@ -86,7 +86,7 @@ public class OracleDemo {
             String sql = "INSERT INTO MONO_SOLUTIONS.CUSTOMER_SMS_SEND (ID, USER_ID, SCHEDULE_TYPE, " +
                         "TITLE, MSG_CONTENT, CALLING_NUM, TGT_NM, PHONE_NUM, " +
                         "RESERV_DTTM, REG_DTTM) " +
-                        "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVA,?,'0',?,?,?,?,?,NULL," +
+                        "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVAL,?,'0',?,?,?,?,?,NULL," +
                         "TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "MONO_CUSTOMER"); // UMS시스템에서 할당 받은 사용자 계정을 입력
