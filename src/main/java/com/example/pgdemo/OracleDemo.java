@@ -35,7 +35,7 @@ public class OracleDemo {
             ResultSetMetaData rsmd = rs2.getMetaData();
             int cnt = rsmd.getColumnCount();
             for (int i = 1; i <= cnt; i++) {
-                System.out.println(rsmd.getColumnName(i));
+                System.out.println(rsmd.getColumnLabel(i));
             }
             System.out.println("<<<<<<<<<<<<<<<<");
             while (rs2.next()) {
