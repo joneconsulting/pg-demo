@@ -2,9 +2,7 @@ package com.example.pgdemo;
 
 import org.springframework.stereotype.Service;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 @Service
 public class OracleDemo {
@@ -23,6 +21,22 @@ public class OracleDemo {
         try {
             conn = DriverManager.getConnection( "jdbc:oracle:thin:@211.241.36.16:1521:ora11" ,
                     "mono_customer", "mono_customer" );
+            System.out.print(conn);
+
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM CUSTOMER_SMS_SEND");
+            ResultSet rs = pstmt.executeQuery();
+            System.out.println("<<<<<<<<<<<<<<<<");
+            while (rs.next()) {
+                StringBuilder sb = new StringBuilder();
+                sb.append("ID=" + rs.getString("ID"));
+                sb.append("USER_ID=" + rs.getString("USER_ID"));
+                sb.append("TITLE=" + rs.getString("TITLE"));
+                sb.append("CALLING_NUM=" + rs.getString("CALLING_NUM"));
+                sb.append("PHONE_NUM=" + rs.getString("PHONE_NUM"));
+                System.out.println(sb.toString());
+            }
+            System.out.println(">>>>>>>>>>>>>>>>");
+
             msg = "데이터베이스 연결 성공\n";
         } catch (SQLException e) {
             System.err.println("데이터베이스 연결 실패\n");
