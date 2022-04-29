@@ -23,15 +23,11 @@ public class OracleDemo {
                     "mono_customer", "mono_customer" );
             System.out.print(conn);
 
-            ResultSet rs = conn.getMetaData().getSchemas();
+            ResultSet rs = conn.getMetaData().getTables(null, "MONO_CUSTOMER",
+                    null, new String[]{"TABLE"});
             while(rs.next()) {
-                try {
-//                    String catalog = rs.getString("TABLE_CATALOG");
-                    String schema = rs.getString("TABLE_SCHEM");
-                    System.out.println("Schema : " + schema);
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
+                String table = rs.getString("TABLE_NAME");
+                System.out.println("Table Name : " + table);
             }
 
 //            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM CUSTOMER_SMS_SEND");
