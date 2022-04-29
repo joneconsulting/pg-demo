@@ -60,19 +60,20 @@ public class OracleDemo {
 //            for (int i = 1; i <= cnt; i++) {
 //                System.out.println(rsmd.getColumnLabel(i));
 //            }
-            System.out.println("<<<<<<<<<<<<<<<<");
+            System.out.println("[[");
             while (rs2.next()) {
                 StringBuilder sb = new StringBuilder();
                 sb.append("\nID=" + rs2.getString("ID"));
-                sb.append("\nUSER_ID=" + rs2.getString("USER_ID"));
-                sb.append("\nTITLE=" + rs2.getString("TITLE"));
+                sb.append("\tUSER_ID=" + rs2.getString("USER_ID"));
+                sb.append("\tTITLE=" + rs2.getString("TITLE"));
                 sb.append("\nCALLING_NUM=" + rs2.getString("CALLING_NUM"));
-                sb.append("\nPHONE_NUM=" + rs2.getString("PHONE_NUM"));
+                sb.append("\tPHONE_NUM=" + rs2.getString("PHONE_NUM"));
                 sb.append("\nREG_DTTM=" + rs2.getString("REG_DTTM"));
+                sb.append("\tSTATE_CD=" + rs2.getString("STATE_CD"));
 
-                System.out.println(sb.toString());
+                System.out.println(sb);
             }
-            System.out.println(">>>>>>>>>>>>>>>>");
+            System.out.println("]]");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -89,7 +90,7 @@ public class OracleDemo {
             String sql = "INSERT INTO MONO_SOLUTIONS.CUSTOMER_SMS_SEND (ID, USER_ID, SCHEDULE_TYPE, " +
                         "TITLE, MSG_CONTENT, CALLING_NUM, TGT_NM, PHONE_NUM, " +
                         "RESERV_DTTM, REG_DTTM) " +
-                        "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVAL,'MONO_CUSTOMER','0',?,?,?,?,?,NULL," +
+                        "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVAL,'mono_customer','0',?,?,?,?,?,NULL," +
                         "TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, new String("[외부전송]SMS")); // [외부전송]SMS
