@@ -16,10 +16,10 @@ public class PGController {
         this.oracleDemo = oracleDemo;
     }
 
-    @GetMapping("/welcome.do")
-    public String request() {
-        return "welcome";
-    }
+//    @GetMapping("/welcome.do")
+//    public String request() {
+//        return "welcome";
+//    }
 
     @GetMapping("/sample_crossplatform.do")
     public String sampleCrossplatform() {
@@ -41,10 +41,10 @@ public class PGController {
         return "payres";
     }
 
-    @GetMapping("/db-test")
+    @GetMapping("/welcome.do")
     public String connectOracle() {
         String result = oracleDemo.connectOracle();
-
-        return result;
+        System.out.println(result);
+        return "welcome";
     }
 }

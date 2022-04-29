@@ -115,6 +115,7 @@ request.setCharacterEncoding("euc-kr");
          	out.println("최종결제요청 성공, DB처리하시기 바랍니다.<br>");
          	            	
          	//최종결제요청 결과를 DB처리합니다. (결제성공 또는 실패 모두 DB처리 가능)
+
 			//상점내 DB에 어떠한 이유로 처리를 하지 못한경우 false로 변경해 주세요.
          	boolean isDBOK = true; 
          	if( !isDBOK ) {
