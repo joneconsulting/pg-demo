@@ -25,9 +25,13 @@ public class OracleDemo {
 
             ResultSet rs = conn.getMetaData().getSchemas();
             while(rs.next()) {
-                String catalog = rs.getString("TABLE_CATALOG");
-                String schema = rs.getString("TABLE_SCHEM");
-                System.out.println("Catalog : " + catalog + ", Schema : " + schema);
+                try {
+                    String catalog = rs.getString("TABLE_CATALOG");
+                    String schema = rs.getString("TABLE_SCHEM");
+                    System.out.println("Catalog : " + catalog + ", Schema : " + schema);
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
 
 //            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM CUSTOMER_SMS_SEND");
