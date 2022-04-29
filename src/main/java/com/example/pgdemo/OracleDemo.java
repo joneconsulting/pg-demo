@@ -52,7 +52,8 @@ public class OracleDemo {
         String msg = null;
         Connection conn = getConnection();
         try {
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM MONO_SOLUTIONS.CUSTOMER_SMS_SEND ORDER BY ID DESC");
+            PreparedStatement pstmt = conn.prepareStatement(
+                    "SELECT * FROM MONO_SOLUTIONS.CUSTOMER_SMS_SEND WHERE PHONE_NUM='01034912327'");
             ResultSet rs2 = pstmt.executeQuery();
             ResultSetMetaData rsmd = rs2.getMetaData();
             int cnt = rsmd.getColumnCount();
