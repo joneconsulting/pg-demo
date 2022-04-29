@@ -23,7 +23,7 @@ public class OracleDemo {
                     "mono_customer", "mono_customer" );
             System.out.print(conn);
 
-            ResultSet rs = conn.getMetaData().getTables(null, "MONO_CUSTOMER",
+            ResultSet rs = conn.getMetaData().getTables(null, "MONO_SOLUTIONS",
                     null, new String[]{"TABLE"});
             while(rs.next()) {
                 String table = rs.getString("TABLE_NAME");
