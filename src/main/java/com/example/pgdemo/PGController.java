@@ -40,20 +40,4 @@ public class PGController {
     public String payres() {
         return "payres";
     }
-
-    @GetMapping("/read.do")
-    public String read() {
-        String result2 = oracleDemo.readData();
-        System.out.println(result2);
-
-        return "welcome";
-    }
-
-    @GetMapping("/add.do")
-    public String add() {
-        boolean result1 = oracleDemo.addData();
-        System.out.println(result1 ? "추가 성공" : "추가 실패");
-
-        return "welcome";
-    }
 }

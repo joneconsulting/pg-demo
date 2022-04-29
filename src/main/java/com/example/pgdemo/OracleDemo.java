@@ -3,6 +3,8 @@ package com.example.pgdemo;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class OracleDemo {
@@ -48,8 +50,8 @@ public class OracleDemo {
         }
     }
 
-    public String readData() {
-        String msg = null;
+    public List<String> readData() {
+        List<String> list = new ArrayList<>();
         Connection conn = getConnection();
         try {
             PreparedStatement pstmt = conn.prepareStatement(
@@ -63,15 +65,17 @@ public class OracleDemo {
             System.out.println("[[");
             while (rs2.next()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append("\nID=" + rs2.getString("ID"));
-                sb.append("\tUSER_ID=" + rs2.getString("USER_ID"));
-                sb.append("\tTITLE=" + rs2.getString("TITLE"));
-                sb.append("\nCALLING_NUM=" + rs2.getString("CALLING_NUM"));
-                sb.append("\tPHONE_NUM=" + rs2.getString("PHONE_NUM"));
-                sb.append("\nREG_DTTM=" + rs2.getString("REG_DTTM"));
-                sb.append("\tSTATE_CD=" + rs2.getString("STATE_CD"));
+                sb.append("ID=" + rs2.getString("ID"));
+                sb.append(", USER_ID=" + rs2.getString("USER_ID"));
+                sb.append(", TITLE=" + rs2.getString("TITLE"));
+                sb.append(", CALLING_NUM=" + rs2.getString("CALLING_NUM"));
+                sb.append(", PHONE_NUM=" + rs2.getString("PHONE_NUM"));
+                sb.append(", REG_DTTM=" + rs2.getString("REG_DTTM"));
+                sb.append(", STATE_CD=" + rs2.getString("STATE_CD"));
+                sb.append(", RESULT_MSG=" + rs2.getString("RESULT_MSG"));
 
                 System.out.println(sb);
+                list.add(sb.toString());
             }
             System.out.println("]]");
         } catch (SQLException e) {
@@ -80,7 +84,7 @@ public class OracleDemo {
 
         closeConnection(conn);
 
-        return msg;
+        return list;
     }
 
     public boolean addData() {
