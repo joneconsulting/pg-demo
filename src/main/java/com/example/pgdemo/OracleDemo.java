@@ -86,15 +86,14 @@ public class OracleDemo {
             String sql = "INSERT INTO MONO_SOLUTIONS.CUSTOMER_SMS_SEND (ID, USER_ID, SCHEDULE_TYPE, " +
                         "TITLE, MSG_CONTENT, CALLING_NUM, TGT_NM, PHONE_NUM, " +
                         "RESERV_DTTM, REG_DTTM) " +
-                        "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVAL,?,'0',?,?,?,?,?,NULL," +
+                        "VALUES (MONO_SOLUTIONS.CUSTOMER_SMS_SEND_SEQ.NEXTVAL,'MONO_CUSTOMER','0',?,?,?,?,?,NULL," +
                         "TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))";
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "MONO_CUSTOMER"); // UMS시스템에서 할당 받은 사용자 계정을 입력
-            pstmt.setString(2, new String("[External send]SMS")); // [외부전송]SMS
-            pstmt.setString(3, "This is a test message for external system"); // 외부시스템 SMS전송테스트 입니다.
-            pstmt.setString(4, "0221558853"); // 021112222
-            pstmt.setString(5, "SEOCHo SCP"); // 홍길동
-            pstmt.setString(6, "01034912327"); // 01011112222
+            pstmt.setString(1, new String("[External send]SMS")); // [외부전송]SMS
+            pstmt.setString(2, "This is a test message for external system"); // 외부시스템 SMS전송테스트 입니다.
+            pstmt.setString(3, "0221558853"); // 021112222
+            pstmt.setString(4, "SEOCHO SCP"); // 홍길동
+            pstmt.setString(5, "01034912327"); // 01011112222
 
             int result = pstmt.executeUpdate();
 
