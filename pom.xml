@@ -96,6 +96,12 @@
 <!--            <systemPath>${basedir}/src/main/resources/external_lib/ojdbc11.jar</systemPath>-->
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.oracle.ojdbc/orai18n -->
+        <dependency>
+            <groupId>com.oracle.ojdbc</groupId>
+            <artifactId>orai18n</artifactId>
+            <version>19.3.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
