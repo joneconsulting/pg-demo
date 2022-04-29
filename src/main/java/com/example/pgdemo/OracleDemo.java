@@ -11,9 +11,9 @@ public class OracleDemo {
     public String connectOracle() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            System.out.print("드라이버 검색 성공");
+            System.out.print("드라이버 검색 성공\n");
         } catch (ClassNotFoundException e) {
-            System.err.println("드라이버 검색 실패");
+            System.err.println("드라이버 검색 실패\n");
             e.printStackTrace();
         }
 
@@ -23,9 +23,9 @@ public class OracleDemo {
         try {
             conn = DriverManager.getConnection( "jdbc:oracle:thin:@211.241.36.16:1521:mono_solutions" ,
                     "mono_customer", "mono_customer" );
-            msg = "데이터베이스 연결 성공";
+            msg = "데이터베이스 연결 성공\n";
         } catch (SQLException e) {
-            System.err.println("데이터베이스 연결 실패");
+            System.err.println("데이터베이스 연결 실패\n");
             e.printStackTrace();
         }
 

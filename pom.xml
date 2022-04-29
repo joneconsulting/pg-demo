@@ -91,8 +91,9 @@
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc11</artifactId>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/external_lib/ojdbc11.jar</systemPath>
+            <version>21.5.0.0</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${basedir}/src/main/resources/external_lib/ojdbc11.jar</systemPath>-->
         </dependency>
     </dependencies>
 
