@@ -40,7 +40,7 @@ public class OracleDemo {
             System.out.println("<<<<<<<<<<<<<<<<");
             while (rs2.next()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append("ID=" + rs.getString("ID"));
+                sb.append("ID=" + rs.getString("id"));
                 sb.append("USER_ID=" + rs.getString("USER_ID"));
                 sb.append("TITLE=" + rs.getString("TITLE"));
                 sb.append("CALLING_NUM=" + rs.getString("CALLING_NUM"));
