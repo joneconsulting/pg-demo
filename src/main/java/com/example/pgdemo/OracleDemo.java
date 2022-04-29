@@ -40,11 +40,11 @@ public class OracleDemo {
             System.out.println("<<<<<<<<<<<<<<<<");
             while (rs2.next()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append("ID=" + rs.getString("id"));
-                sb.append("USER_ID=" + rs.getString("USER_ID"));
-                sb.append("TITLE=" + rs.getString("TITLE"));
-                sb.append("CALLING_NUM=" + rs.getString("CALLING_NUM"));
-                sb.append("PHONE_NUM=" + rs.getString("PHONE_NUM"));
+                sb.append("ID=" + rs2.getString("ID"));
+                sb.append("USER_ID=" + rs2.getString("USER_ID"));
+                sb.append("TITLE=" + rs2.getString("TITLE"));
+                sb.append("CALLING_NUM=" + rs2.getString("CALLING_NUM"));
+                sb.append("PHONE_NUM=" + rs2.getString("PHONE_NUM"));
                 System.out.println(sb.toString());
             }
             System.out.println(">>>>>>>>>>>>>>>>");
