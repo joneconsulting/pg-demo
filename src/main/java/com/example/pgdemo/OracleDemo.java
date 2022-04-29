@@ -32,6 +32,11 @@ public class OracleDemo {
 
             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM MONO_SOLUTIONS.CUSTOMER_SMS_SEND");
             ResultSet rs2 = pstmt.executeQuery();
+            ResultSetMetaData rsmd = rs2.getMetaData();
+            int cnt = rsmd.getColumnCount();
+            for (int i = 0; i < cnt; i++) {
+                System.out.println(rsmd.getColumnName(i));
+            }
             System.out.println("<<<<<<<<<<<<<<<<");
             while (rs2.next()) {
                 StringBuilder sb = new StringBuilder();
